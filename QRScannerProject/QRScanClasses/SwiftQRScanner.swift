@@ -95,6 +95,12 @@ public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputO
         }
     }
     
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
+        self.stopScanAnimation()
+    }
+    
     public override func viewDidLoad() {
          super.viewDidLoad()
         imagepicker.delegate = self

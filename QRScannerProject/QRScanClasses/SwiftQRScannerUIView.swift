@@ -39,7 +39,7 @@ extension QRCodeScannerController {
         flashButton = UIButton(frame: CGRect(x: view.frame.width/2 - (44.0 + 8 ) , y: rect.origin.y + rect.size.height + 30, width: 44.0, height: 44.0))
         flashButton.tintColor = UIColor.white
         flashButton.contentMode = .scaleAspectFit
-        flashButton.addTarget(self, action: #selector(dismissVC), for: .touchUpInside) //toggleTorch
+        flashButton.addTarget(self, action: #selector(toggleTorch), for: .touchUpInside) //toggleTorch
         if let flashOffImg = flashOffImage {
             flashButton.setImage(flashOffImg, for: .normal)
             view.addSubview(flashButton)
@@ -74,7 +74,7 @@ extension QRCodeScannerController {
 
         
         //QR Selection View
-        let qrSelectionView = UIView(frame: CGRect(x: self.view.bounds.width/2 - qrSelectionViewWidth/2 , y: rect.origin.y - (qrSelectionViewHeight + qrSelectionViewWidth/2), width: qrSelectionViewWidth , height: qrSelectionViewHeight))
+        let qrSelectionView = UIView(frame: CGRect(x: self.view.bounds.width/2 - qrSelectionViewWidth/2 , y: rect.origin.y - (qrSelectionViewHeight + qrSelectionViewWidth/3), width: qrSelectionViewWidth , height: qrSelectionViewHeight))
         
         qrSelectionView.backgroundColor = UIColor.clear
         qrSelectionView.layer.borderWidth = 1.5
